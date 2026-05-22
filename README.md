@@ -1,5 +1,5 @@
 # WALL-E
-<img width="104" height="160" alt="WhatsApp Image 2026-05-15 at 12 03 38 PM" src="https://github.com/user-attachments/assets/0df7fe9a-b929-4298-8fa0-5668af0e6ee0" />
+<img width="104" height="160" alt="WhatsApp Image 2026-05-15 at 12 03 38 PM" src="https://github.com/user-attachments/assets/0df7fe9a-b929-4298-8fa0-5668af0e6ee0" /><br>
 Integrantes:<br>
 Ariana Sofia Garcia Duran <br>
 Valentina Carrillo Cardenas<br>
