@@ -18,7 +18,7 @@ Librerías utilizadas:<br>
 Codigo:<br>
 (Debido a condiciones de interferencia causada en los procesos, se tuvo que utilizar dos ESP32-S3, una encargada de movimiento de motores y de pantallas, y la otra encargada de monitorear el amibiente y reproducir el audio)<br>
 ESP de Motores:<br>
-CarModule.cpp y .h -> Realizan la conexión Wi-Fi de el microcontrolador y del broker, permite el movimiento de motores con respecto a las instrucciones enviadas.<br>
-EyesModule.cpp y .h -> Envía comandos de proyección a las pantallas que estan conectadas en paralelo, indicando el ciclo a seguir para los ojos.<br>
+- CarModule.cpp y .h -> Realizan la conexión Wi-Fi de el microcontrolador y del broker, permite el movimiento de motores con respecto a las instrucciones enviadas.<br>
+- EyesModule.cpp y .h -> Envía comandos de proyección a las pantallas que estan conectadas en paralelo, indicando el ciclo a seguir para los ojos.<br>
 ESP de monitoreo:<br> 
-WALL-E2.ino -> Código principal de monitoreo de la temperatura, reproducción de voz y conexión a thinger.io
+- WALL-E2.ino -> Código principal de monitoreo de la temperatura, reproducción de voz y conexión a thinger.io
