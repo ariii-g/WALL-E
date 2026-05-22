@@ -28,6 +28,15 @@ int velocidad = 150;
 Servo servo1;
 Servo servo2;
 
+hw_timer_t *timerReconnect = NULL;
+
+volatile bool retryReconnect = false;
+
+void IRAM_ATTR onReconnectTimer() {
+
+  retryReconnect = true;
+}
+
 void setVelocidad(int v) {
 
   ledcWrite(ENA, v);
@@ -136,22 +145,15 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void reconnect() {
 
-  while (!client.connected()) {
+  if (client.connect("ESP32_CARRO")) {
 
-    if (client.connect("ESP32_CARRO")) {
+    client.subscribe("carrito/direccion");
 
-      client.subscribe("carrito/direccion");
+    client.subscribe("carrito/velocidad");
 
-      client.subscribe("carrito/velocidad");
+    client.subscribe("carrito/servo1");
 
-      client.subscribe("carrito/servo1");
-
-      client.subscribe("carrito/servo2");
-
-    } else {
-
-      delay(2000);
-    }
+    client.subscribe("carrito/servo2");
   }
 }
 
@@ -175,12 +177,20 @@ void carSetup() {
 
   client.setCallback(callback);
 
+  timerReconnect = timerBegin(1000000);
+
+  timerAttachInterrupt(timerReconnect, &onReconnectTimer);
+
+  timerAlarm(timerReconnect, 2000000, true, 0);
+
   parar();
 }
 
 void carLoop() {
 
-  if (!client.connected()) {
+  if (!client.connected() && retryReconnect) {
+
+    retryReconnect = false;
 
     reconnect();
   }
