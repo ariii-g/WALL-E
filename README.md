@@ -1,5 +1,5 @@
 # WALL-E
-
+<img width="1047" height="1600" alt="596498181-0df7fe9a-b929-4298-8fa0-5668af0e6ee0" src="https://github.com/user-attachments/assets/6207f96a-0f14-4d31-a9a3-da5a7c6759fb" />
 Integrantes:<br>
 Ariana Sofia Garcia Duran <br>
 Valentina Carrillo Cardenas<br>
